@@ -15,12 +15,12 @@ client = TelegramClient(
     API_HASH
 )
 
-client.start()
+client.connect()
+
+me = client.get_me()
 
 @app.route("/")
 def home():
-    me = client.get_me()
-
     return render_template(
         "index.html",
         name=me.first_name,
