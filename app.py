@@ -1,10 +1,11 @@
 from flask import Flask, render_template
 from telethon.sync import TelegramClient
 from telethon.sessions import StringSession
+import os
 
-API_ID = 12345678
-API_HASH = "YOUR_API_HASH"
-STRING_SESSION = "YOUR_STRING_SESSION"
+API_ID = int(os.getenv("API_ID"))
+API_HASH = os.getenv("API_HASH")
+STRING_SESSION = os.getenv("STRING_SESSION")
 
 app = Flask(__name__)
 
