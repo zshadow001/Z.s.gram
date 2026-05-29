@@ -9,7 +9,7 @@
             color:white;
             font-family:Arial;
             text-align:center;
-            margin-top:100px;
+            margin-top:60px;
         }
 
         .card{
@@ -19,6 +19,22 @@
             padding:25px;
             border-radius:15px;
         }
+
+        .btn{
+            display:block;
+            margin:10px auto;
+            padding:12px;
+            width:200px;
+            background:#2563eb;
+            color:white;
+            text-decoration:none;
+            border-radius:8px;
+            font-weight:bold;
+        }
+
+        .btn:hover{
+            opacity:0.9;
+        }
     </style>
 </head>
 <body>
@@ -26,9 +42,18 @@
 <div class="card">
     <h1>Telegram Connected ✅</h1>
 
-    <p>Name: {{name}}</p>
-    <p>Username: @{{username}}</p>
-    <p>Phone: +{{phone}}</p>
+    <p><b>Name:</b> {{name}}</p>
+    <p><b>Username:</b> @{{username}}</p>
+    <p><b>Phone:</b> +{{phone}}</p>
+
+    <hr>
+
+    <a class="btn" href="/profile">👤 Profile</a>
+
+    <a class="btn" href="/chats">💬 Chats</a>
+
+    <a class="btn" href="/channels">📢 Channels</a>
+
 </div>
 
 </body>
