@@ -1,7 +1,33 @@
-<h1>Channels</h1>
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Channels</title>
+
+<link rel="stylesheet"
+href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>📢 Channels</h1>
 
 {% for c in channels %}
-<p>{{ c.name }}</p>
+
+<div class="list-item">
+{{ c.name }}
+</div>
+
 {% endfor %}
 
-<a href="/">Home</a>
+<a class="back" href="/">
+⬅ Back
+</a>
+
+</div>
+
+</body>
+</html>
