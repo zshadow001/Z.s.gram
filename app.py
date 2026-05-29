@@ -17,7 +17,22 @@ client = TelegramClient(
 
 client.connect()
 
+# Startup pe hi data load kar lo
 me = client.get_me()
+
+try:
+    dialogs = client.get_dialogs(limit=100)
+except Exception:
+    dialogs = []
+
+channel_list = []
+
+for d in dialogs:
+    try:
+        if d.is_channel:
+            channel_list.append(d)
+    except:
+        pass
 
 
 @app.route("/")
@@ -32,8 +47,6 @@ def home():
 
 @app.route("/profile")
 def profile():
-    me = client.get_me()
-
     return render_template(
         "profile.html",
         me=me
@@ -42,8 +55,6 @@ def profile():
 
 @app.route("/chats")
 def chats():
-    dialogs = client.get_dialogs(limit=100)
-
     return render_template(
         "chats.html",
         dialogs=dialogs
@@ -52,14 +63,6 @@ def chats():
 
 @app.route("/channels")
 def channels():
-    dialogs = client.get_dialogs(limit=100)
-
-    channel_list = []
-
-    for d in dialogs:
-        if d.is_channel:
-            channel_list.append(d)
-
     return render_template(
         "channels.html",
         channels=channel_list
