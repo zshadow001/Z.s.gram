@@ -3,56 +3,45 @@
 <head>
     <title>Telegram Panel</title>
 
-    <style>
-        body{
-            background:#0f172a;
-            color:white;
-            font-family:Arial;
-            text-align:center;
-            margin-top:60px;
-        }
-
-        .card{
-            width:320px;
-            margin:auto;
-            background:#1e293b;
-            padding:25px;
-            border-radius:15px;
-        }
-
-        .btn{
-            display:block;
-            margin:10px auto;
-            padding:12px;
-            width:200px;
-            background:#2563eb;
-            color:white;
-            text-decoration:none;
-            border-radius:8px;
-            font-weight:bold;
-        }
-
-        .btn:hover{
-            opacity:0.9;
-        }
-    </style>
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
 </head>
+
 <body>
 
-<div class="card">
-    <h1>Telegram Connected ✅</h1>
+<div class="container">
 
-    <p><b>Name:</b> {{name}}</p>
-    <p><b>Username:</b> @{{username}}</p>
-    <p><b>Phone:</b> +{{phone}}</p>
+    <div class="card">
 
-    <hr>
+        <h1 class="title">
+            Telegram Connected ✅
+        </h1>
 
-    <a class="btn" href="/profile">👤 Profile</a>
+        <p class="info">
+            <b>Name:</b> {{name}}
+        </p>
 
-    <a class="btn" href="/chats">💬 Chats</a>
+        <p class="info">
+            <b>Username:</b> @{{username}}
+        </p>
 
-    <a class="btn" href="/channels">📢 Channels</a>
+        <p class="info">
+            <b>Phone:</b> +{{phone}}
+        </p>
+
+        <a class="btn" href="/profile">
+            👤 Profile
+        </a>
+
+        <a class="btn" href="/chats">
+            💬 Chats
+        </a>
+
+        <a class="btn" href="/channels">
+            📢 Channels
+        </a>
+
+    </div>
 
 </div>
 
