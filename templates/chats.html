@@ -1,7 +1,33 @@
-<h1>Chats</h1>
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Chats</title>
+
+<link rel="stylesheet"
+href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>💬 Chats</h1>
 
 {% for d in dialogs %}
-<p>{{ d.name }}</p>
+
+<div class="list-item">
+{{ d.name }}
+</div>
+
 {% endfor %}
 
-<a href="/">Home</a>
+<a class="back" href="/">
+⬅ Back
+</a>
+
+</div>
+
+</body>
+</html>
