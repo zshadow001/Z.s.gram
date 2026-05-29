@@ -1,7 +1,39 @@
-<h1>Profile</h1>
+<!DOCTYPE html>
+<html>
+<head>
+<title>Profile</title>
 
-<p>Name: {{ me.first_name }}</p>
-<p>Username: @{{ me.username }}</p>
-<p>Phone: +{{ me.phone }}</p>
+<link rel="stylesheet"
+href="{{ url_for('static', filename='style.css') }}">
+</head>
 
-<a href="/">Home</a>
+<body>
+
+<div class="container">
+
+<div class="card">
+
+<h1>👤 Profile</h1>
+
+<p class="info">
+Name: {{ me.first_name }}
+</p>
+
+<p class="info">
+Username: @{{ me.username }}
+</p>
+
+<p class="info">
+Phone: +{{ me.phone }}
+</p>
+
+<a class="back" href="/">
+⬅ Back
+</a>
+
+</div>
+
+</div>
+
+</body>
+</html>
